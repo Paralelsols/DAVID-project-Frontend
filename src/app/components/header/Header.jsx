@@ -26,17 +26,17 @@ export default function Header() {
             <nav style={{marginLeft:'auto', marginRight:'auto'}} className="bg-hero pt-2 max-w-screen-xl  w-full z-20 top-0 left-0 text-white">
                 <div className="max-w-screen-xl w-[92%] flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="/" className="flex items-center">
-                        <Image
+                        {/* <Image
                             style={{ width: '100%', height: '100%' }}
                             height={100}
                             width={100}
                             src={logo}
                             className="mr-3"
                             alt="Logo"
-                        />
-                        {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                            Mango Man
-                        </span> */}
+                        /> */}
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                            LOGO
+                        </span>
                     </a>
                     <div className="flex md:order-2">
                     <a href="https://stakerewards.mmint.io/Mmint/referral/0x1D0BcF91Ba851045D0499F2b7Ee82824c6cF4bD6" target="_blank">
@@ -96,7 +96,7 @@ export default function Header() {
                                     About
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <a
                                  onClick={()=>scroll('roadmap')}
                                     className="cursor-pointer block py-2 pl-3 pr-4 text-white md:p-0"
@@ -112,7 +112,7 @@ export default function Header() {
                                 >
                                     Web3 Domains
                                 </a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

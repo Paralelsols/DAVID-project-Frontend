@@ -23,6 +23,9 @@ export default function Footer() {
                                     className="mr-3"
                                     alt="Logo"
                                 /> */}
+                                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                                    LOGO
+                                </span>
                                 <ul className="text-white  font-medium">
                                     <p className='footerPara lowercase'>
                                        <span className='capitalize'>For</span> PARTNERSHIPS AND INQURIES
