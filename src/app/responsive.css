@@ -1,0 +1,59 @@
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+    .hidemob {
+        margin-top: -5px !important;
+    }
+
+    .frameplus {
+        background: var(--Gradient, linear-gradient(81deg, #5337FF 0%, #B337FF 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: Clash Grotesk;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 48px;
+        text-transform: capitalize;
+    }
+
+    .frametext {
+        color: #FFF;
+        font-family: Clash Grotesk;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 48px;
+        /* 150% */
+        text-transform: capitalize;
+    }
+
+    .foempara {
+        color: #FFF;
+        font-family: 'circular';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 10;
+        line-height: 24px;
+        /* 171.429% */
+        text-transform: capitalize;
+    }
+
+    .hidemob {
+        /* display: none !important; */
+    }
+
+    .showmob {
+        display: block !important;
+    }
+}
+
+/* Tablet Styles (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .hidemob {
+        margin-top: 0px !important;
+    }
+}
+
+/* Desktop Styles (1024px and above) */
+@media screen and (min-width: 1024px) {}

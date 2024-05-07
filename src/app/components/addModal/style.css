@@ -1,0 +1,19 @@
+
+.bg-smoke-light {
+    background-color: rgba(0, 0, 0, 0.856);
+  }
+  
+.bg-color{
+ background: var(--g, linear-gradient(68deg, #EB00FF 3.6%, #00F0FF 100%))
+}
+
+.modal-bg{
+  background-image: url('/src/app/assets/images/left-light.webp'),
+  linear-gradient(to bottom, #EB00FF, #00eeff00);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
+  border: 1px solid;
+  border-color: #EB00FF;
+}
