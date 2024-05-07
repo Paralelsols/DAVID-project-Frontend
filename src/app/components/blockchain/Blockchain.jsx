@@ -5,7 +5,7 @@ export default function Blockchain() {
     <>
       <div id="blockchain" className="bg-blockchain max-w-screen-xl  w-full z-20  left-0 text-white">
         <div className="flex flex-col md:flex-row max-w-screen-xl w-[94%] items-center justify-between mx-auto pt-5 pb-5">
-          <div className="md:w-1/2 p-4 order-2 md:order-1 text-center md:text-center ">
+          <div className="md:w-1/2 p-4 order-2 md:order-2 text-center md:text-center ">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold">
               <span className="mangoname">Blockchain</span>
             </h1>
@@ -30,7 +30,7 @@ export default function Blockchain() {
               </button>
             {/* </a> */}
           </div>
-          <div className="md:w-1/2  md:order-2">
+          <div className="md:w-1/2  md:order-1">
             <Image
               className="updownAnimationWithDelay"
               style={{ transform: "scaleX(-1) scaleY(1)" }}

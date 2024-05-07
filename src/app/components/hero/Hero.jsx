@@ -1,5 +1,6 @@
 import Image from "next/image";
 import img from '../../assets/images/hero-Img.webp'
+import keyboard from '../../assets/images/keyboard.webp'
 import { scroll } from "@/function";
 import PresaleWegit from "../presaleWegit/presaleWegit";
 
@@ -26,9 +27,10 @@ export default function Hero() {
                         Explore
                     </button>
                 </div>
-                <div style={{border:'1px solid' , borderColor:'black' , borderRadius:'20px'}} className="md:w-[40%] md:order-2">
-                    <PresaleWegit />
-                    {/* <Image className="updownAnimation" width={"100%"} height={"100%"} src={img} alt="heroimg" /> */}
+                <div  className="md:w-1/2 md:order-2">
+                {/* style={{border:'1px solid' , borderColor:'black' , borderRadius:'20px'}} */}
+                    {/* <PresaleWegit /> */}
+                    <Image className="updownAnimation" width={"100%"} height={"100%"} src={keyboard} alt="heroimg" />
                 </div>
             </div>
 

@@ -15,7 +15,7 @@ export default function Swap() {
 
   return (
     <>
-      <div className="bg-web3 max-w-screen-xl  w-full z-20 top-0 left-0 text-white">
+      <div className="bg-web3 max-w-screen-xl w-full z-20 top-0 left-0 text-white">
         
       <VideoSlider videos={videos} />
         {/* <div className="flex flex-col md:flex-row max-w-screen-xl w-[94%] items-center justify-between mx-auto pt-5 pb-5">

@@ -1,50 +1,124 @@
+"use client"
+import React,{ useRef} from "react";
 import Image from "next/image";
 import colorLine from '../../assets/images/roadmapcolorline.webp'
-// import loder from '../../assets/images/giff/loader2.gif'
-import loder from '../../assets/images/leftaero.webp'
+
+
+import { Pie ,Doughnut  } from 'react-chartjs-2';
+import 'chart.js/auto';
+ 
+export const PieChartComponent = () => {
+    const getGradient = (ctx, chartArea, colorStart, colorEnd) => {
+      const { left, right, top, bottom } = chartArea;
+      const innerWidth = right - left;
+      const innerHeight = bottom - top;
+      const midX = left + innerWidth / 2;
+      const midY = top + innerHeight / 2;
+      const gradient = ctx.createRadialGradient(midX, midY, 0, midX, midY, Math.max(innerWidth, innerHeight) / 2000);
+      gradient.addColorStop(0, colorStart);
+      gradient.addColorStop(1, colorEnd);
+      return gradient;
+    };
+  
+    const data = {
+      labels: ['Token Distribution','for Founders', 'in Circulation', 'for Team', 'To Burn', 'Airdrop'],
+      datasets: [
+        {
+          label: 'Token Distribution',
+          data: [40, 20, 40, 10, 20, 10], // Percentages for each category
+          backgroundColor: (context) => {
+            const chart = context.chart;
+            const { ctx, chartArea } = chart;
+  
+            if (!chartArea) {
+              return [];
+            }
+            return [
+              getGradient(ctx, chartArea, '#6a82fb', '#fc5c7d'),  // Sky blue to pink
+              getGradient(ctx, chartArea, '#fc5c7d', '#fda085'),  // Pink to peach
+              getGradient(ctx, chartArea, '#fda085', '#f6d365'),  // Peach to yellow
+              getGradient(ctx, chartArea, '#f6d365', '#96e6a1'),  // Yellow to light green
+              getGradient(ctx, chartArea, '#96e6a1', '#6a82fb')   // Light green to sky blue
+            ];
+          },
+          borderColor: '#000000',
+          borderWidth: 1,
+          borderRadius: 0, // Adds a rounded edge to each segment
+          borderAlign: 'center', // Centers the border on the edge of the segment
+        },
+      ],
+    };
+  
+    const options = {
+      cutout: '1%',
+      plugins: {
+        legend: {
+          display: true,
+          position: 'left',
+          labels: {
+            color: 'white'
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(tooltipItem) {
+              return `${tooltipItem.label}: ${tooltipItem.raw}%`;
+            }
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      }
+    };
+  
+    return (
+      <div style={{ width: '300px', height: '300px'}}>
+        <Pie data={data} options={options} />
+      </div>
+    );
+  };
+
 export default function rodemap() {
     return (
         <>
-            <div id="roadmap" className="bg-roadmap w-full items-center mt-10 p-5 text-center">
+            <div id="roadmap" className="bg-roadmap w-full items-center p-5 text-center">
                 {/* <h4 style={{ marginTop: '40px' }} className=" name">roadmap</h4> */}
                 {/* <h1 className="text-4xl md:text-5xl lg:text-5xl text-[white] font-bold mb-10">
                     roadmap for <span className=" name">  web 3.0 </span> LTD
                 </h1> */}
-                <h1 className="text-4xl md:text-5xl lg:text-5xl text-[white] font-bold mb-10">
+                {/* <h1 className="text-4xl md:text-5xl lg:text-5xl text-[white] font-bold mb-10">
                     <span className=" name"> roadmap</span>
-                </h1>
+                </h1> */}
                 {/* <p className="para">Cursus ornare nunc cursus tempus. Morbi in donec viverra amet cras arcu. Sit egestas eget nec facilisis pellentesque. </p> */}
                 <div className="mt-20">
                     <div className="grid grid-cols-2 md:grid-cols-3  gap-5 max-w-screen-xl md:w-[94%] w-full mx-auto mt-10">
                         <div className="p-5 text-left">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
-                                    Phase 1
+                                   TOKEN DISTRIBUTION
                                 </h2>
                                 <ul className="max-w-md space-y-1 text-gray-500 list-inside ">
-                                    <li className="flex items-center">
-
-                                        Launched pre sale at a price of 0.000000001
+                                <li  className="hidden md:block flex items-center">
+                                        40% Token Distribution
                                     </li>
-                                    <li className="flex items-center">
-
-                                        Brand awareness
+                                
+                                    <li className="hidden md:block flex items-center">
+                                        The highest percentage in circulation
                                     </li>
-                                    <li className="flex items-center">
-
-                                        First Fruit Meme token launch
-                                    </li>
-                                    <li className="flex items-center">
-
-                                        Attended Crypto Expo Dubai
-
+                                    <li >
+                                        <PieChartComponent /> 
                                     </li>
 
                                 </ul>
                             </>
                         </div>
+                        {/* className="hidden md:block" */}
                         <div className="p-auto m-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="62" height="63" viewBox="0 0 62 63" fill="none">
+                            <svg className="hidden md:block " xmlns="http://www.w3.org/2000/svg" width="62" height="63" viewBox="0 0 62 63" fill="none">
                                 <g filter="url(#filter0_d_214_6731)">
                                     <circle cx="31.0001" cy="23.7298" r="14.7865" fill="url(#paint0_linear_214_6731)" />
                                 </g>
@@ -65,30 +139,24 @@ export default function rodemap() {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <Image className="rdimg" src={colorLine} alt="" width='90%' height='10%' />
+                            <Image className="rdimg hidden md:block " src={colorLine} alt="" width='90%' height='10%' />
                         </div>
-                        <div className="p-5 text-left md:text-right ">
+                        <div style={{textTransform:'lowercase'}}  className="p-5 text-left md:text-right ">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
-                                    Phase 2
+                                    FOUNDERS
                                 </h2>
                                 <ul className="max-w-md text-gray-500 list-inside ">
                                     <li  >
-                                        Listed at Pancake Swap
+                                    THE FOUNDERS OF PMT AI RECEIVE 20% OF THE TOTAL TOKEN SUPPLY AS AN INCENTIVE FOR THEIR VISION
 
                                     </li>
-                                    <li  >
-                                        Coingecko listing
+                                    <li className="hidden md:block" >
+                                    EFFORTS, AND CONTRIBUTIONS TO THE PROJECTS INCEPTION AND DEVELOPMENT. THIS ENSURES ALIGNMENT OF INTERESTS AND PROVIDES LONG-TERM MOTIVATION FOR THE TEAM TO DRIVE THE PROJECT FORWARD.
 
                                     </li>
-                                    <li  >
-                                        Coin market cap listing
 
-                                    </li>
-                                    <li >
-                                        Won the Best Crypto Debut Award at Crypto Expo Asia
-                                    </li>
-
+                                    <li className="hidden md:block"> Allocation : 100,000,000 tokens</li>
                                 </ul>
                             </>
                         </div>
@@ -119,18 +187,18 @@ export default function rodemap() {
 
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3  gap-5 max-w-screen-xl md:w-[94%] w-full mx-auto mt-10">
-                        <div className="p-5 text-left">
+                        <div style={{textTransform:'lowercase'}}  className="p-5 text-left">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
-                                    Phase 3
+                                   CIRCULATION
                                 </h2>
+                                {/* className="hidden md:block" */}
                                 <ul className="max-w-md space-y-1 text-gray-500 list-inside ">
-                                    <li className="flex items-center">Kill one zero and reach a price of 0.000000013
-
+                                    <li className="hidden md:block flex items-center">K40% OF THE TOTAL TOKEN SUPPLY, AMOUNTING TO 200,000,000 TOKENS, IS MADE AVAILABLE FOR CIRCULATION WITHIN THE PMT AI ECOSYSTEM. 
                                     </li>
-                                    <li className="flex items-center">Listed in the top Centralized exchanges</li>
-                                    <li className="flex items-center">To achieve 1000 rank at coingecko </li>
-
+                                    <li className="hidden md:block flex items-center">THESE TOKENS CAN BE TRADED, OR USED FOR VARIOUS PURPOSES WITHIN THE PLATFORM</li>
+                                    <li className="flex items-center">CONTRIBUTING TO LIQUIDITY AND UTILITY. </li>
+                                    <li className="flex items-center"> Allocation : 200,000,000 tokens</li>
 
                                 </ul>
                             </>
@@ -159,18 +227,17 @@ export default function rodemap() {
                             </svg>
                             <Image className="rdimg" src={colorLine} alt="" width='90%' height='10%' />
                         </div>
-                        <div className="p-5 text-left md:text-right ">
+                        <div style={{textTransform:'lowercase'}}  className="p-5 text-left md:text-right ">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
-                                    Phase 4
+                                   TEAM
                                 </h2>
                                 <ul className="max-w-md text-gray-500 list-inside ">
-                                    <li >Holders to 10000</li>
-                                    <li >Kill one more zero</li>
-                                    <li > swapp Launch
+                                    <li  >EXPLANATION: THE TEAM MEMBERS INVOLVED IN THE DEVELOPMENT, MARKETING</li>
+                                    <li className="hidden md:block" > AND MANAGEMENT OF PMT AI RECEIVE 10% OF THE TOTAL TOKEN SUPPLY AS A REWARD FOR THEIR ONGOING DEDICATION AND EXPERTISE. </li>
+                                    <li className="hidden md:block" > THIS ALLOCATION HELPS ATTRACT AND RETAIN TALENT ESSENTIAL FOR THE PROJECT'S SUCCESS.
                                     </li>
-                                    <li >To get listed in top 10 CEX</li>
-
+                                    <li > Allocation : 50,000,000 tokens</li>
                                 </ul>
 
                             </>
@@ -202,16 +269,15 @@ export default function rodemap() {
 
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3  gap-5 max-w-screen-xl md:w-[94%] w-full mx-auto mt-10">
-                        <div className="p-5 text-left">
+                        <div style={{textTransform:'lowercase'}} className="p-5 text-left">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
-                                    Phase 5
+                                    BURN
                                 </h2>
                                 <ul className="max-w-md space-y-1 text-gray-500 list-inside ">
-                                    <li className="flex items-center">To get listed in top 10 CEX</li>
-                                    <li className="flex items-center"> swap Launch</li>
-                                    <li className="flex items-center">To Get in Top 300 At Coingecko
-                                    </li>
+                                    <li className="hidden md:block flex items-center">A PORTION EQUIVALENT TO 20% OF THE TOTAL TOKEN SUPPLY IS DESIGNATED FOR BURNING, MEANING THESE TOKENS ARE PERMANENTLY REMOVED FROM CIRCULATION. BURNING TOKENS HELPS INCREASE SCARCITY AND POTENTIALLY BOOSTS THE VALUE OF REMAINING TOKENS BY REDUCING SUPPLY OVER TIME</li>
+                                    <li className="flex items-center"> Allocation : 100,000,000 tokens</li>
+                                  
                                 </ul>
                             </>
                         </div>
@@ -242,28 +308,23 @@ export default function rodemap() {
                         <div className="p-5 text-left md:text-right ">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
-                                    Phase 6
+                              AIRDROP
                                 </h2>
                                 <ul className="max-w-md text-gray-500 list-inside ">
-                                    <li  >
-                                          wallet
+                                    <li  className="hidden md:block" >
+                                    A PORTION EQUIVALENT TO 10% OF THE TOTAL TOKEN SUPPLY IS RESERVED FOR AIRDROPS
                                     </li>
                                     <li  >
-                                          Man own blockchain
+                                    WHERE TOKENS ARE DISTRIBUTED FOR FREE TO ELIGIBLE PARTICIPANTS
                                     </li>
-                                    <li  >
-                                        Kill one zero To get in Top 200
+                                    <li className="hidden md:block" >
+                                    AIRDROPS ARE OFTEN USED TO PROMOTE COMMUNITY ENGAGEMENT, ATTRACT NEW USERS, AND INCREASE AWARENESS OF THE PROJECT.
                                     </li>
-                                    <li >
-                                         decentralized staking
-                                    </li>
-                                    <li >
-                                        To get Listed at Top 5 CEX
-                                    </li>
+                                    <li  className="hidden md:block" > Allocation : 50,000,000 tokens</li>
                                 </ul>
                             </>
                         </div>
-                        <div className="p-auto m-auto md:hidden showmob">
+                        {/* <div className="p-auto m-auto md:hidden showmob">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62" height="63" viewBox="0 0 62 63" fill="none">
                                 <g filter="url(#filter0_d_214_6731)">
                                     <circle cx="31.0001" cy="23.7298" r="14.7865" fill="url(#paint0_linear_214_6731)" />
@@ -286,10 +347,10 @@ export default function rodemap() {
                                 </defs>
                             </svg>
                             <Image className="rdimg" src={colorLine} alt="" width='90%' height='10%' />
-                        </div>
+                        </div> */}
 
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3  gap-5 max-w-screen-xl md:w-[94%] w-full mx-auto mt-10">
+                    {/* <div className="grid grid-cols-2 md:grid-cols-3  gap-5 max-w-screen-xl md:w-[94%] w-full mx-auto mt-10">
                         <div className="p-5 text-left">
                             <>
                                 <h2 className="roadmapname mb-2 text-lg font-semibold text-gray-900 ">
@@ -362,7 +423,7 @@ export default function rodemap() {
                             </svg>
                         </div>
 
-                    </div>
+                    </div> */}
                 </div>
             </div >
         </>

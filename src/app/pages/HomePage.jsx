@@ -33,8 +33,8 @@ export default function HomePage() {
             {/* <MangoWallet /> */}
             {/* <Available /> */}
             {/* <Services /> */}
-            <Rodemap />
             <Tokenomic />
+            <Rodemap />
             {/* <Partners /> */}
             {/* <Presence /> */}
             {/* <BlogCard /> */}
