@@ -8,8 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: ' Mango',
-  description: ' Mango Man Official',
+  title: 'Example',
+  description: ' Example Official',
 }
 
 export default function RootLayout({ children }) {
