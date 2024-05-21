@@ -12,23 +12,23 @@ export default function Subscribe() {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      try {
-        const response = await fetch('https://formsubmit.co/info@mmint.io', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: new URLSearchParams({ email }).toString(),
-        });
+      // try {
+      //   const response = await fetch('https://formsubmit.co/nfo@pmiai.io', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/x-www-form-urlencoded',
+      //     },
+      //     body: new URLSearchParams({ email }).toString(),
+      //   });
   
-        if (response.ok) {
-          console.log('Email submitted successfully');
-        } else {
-          console.log('Submission failed');
-        }
-      } catch (error) {
-        console.error('There was an error!', error);
-      }
+      //   if (response.ok) {
+      //     console.log('Email submitted successfully');
+      //   } else {
+      //     console.log('Submission failed');
+      //   }
+      // } catch (error) {
+      //   console.error('There was an error!', error);
+      // }
     };
   
     
