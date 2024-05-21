@@ -28,34 +28,16 @@ export default function Footer() {
                                 </span>
                                 <ul className="text-white  font-medium">
                                     <p className='footerPara lowercase'>
-                                       <span className='capitalize'>For</span> PARTNERSHIPS AND INQURIES
+                                       <span className='capitalize'>The</span>  PMT AI token serves as a cornerstone of the platform's ecosystem, driving utility, engagement, and value creation for all stakeholders. 
+
                                     </p>
                                     <p style={{ marginTop: '15px' }} className='footerPara flex'>
                                         <img style={{ filter: 'invert(1)' }} width="20" height="20" src="https://img.icons8.com/pulsar-line/48/mail.png" alt="mail" />
                                         <a className='p-1' href="mailto:info@mmint.io">
-                                            info@example.io
+                                            info@pmiai.io
                                         </a>
                                     </p>
-                                    {/* <li className="mb-4">
-                                        <a href="#" className=" hover:underline">
-                                            About
-                                        </a>
-                                    </li>
-                                    <li className="mb-4">
-                                        <a href="#" className="hover:underline">
-                                            Careers
-                                        </a>
-                                    </li>
-                                    <li className="mb-4">
-                                        <a href="#" className="hover:underline">
-                                            Brand Center
-                                        </a>
-                                    </li>
-                                    <li className="mb-4">
-                                        <a href="#" className="hover:underline">
-                                            Blog
-                                        </a>
-                                    </li> */}
+                           
                                 </ul>
                             </div>
                             <div>
@@ -64,21 +46,45 @@ export default function Footer() {
                                 </h2>
                                 <ul className="text-white  font-medium">
                                     <li className="mb-4 footerli">
-                                        <a href="https://t.me/manintell" className="hover:underline">
+                                        <a href="#" className="hover:underline">
                                             Telegram
                                         </a>
                                     </li>
                                     <li className="mb-4 footerli">
-                                        <a href="https://twitter.com/manintell" className="hover:underline">
+                                        <a href="#" className="hover:underline">
                                             Twitter
                                         </a>
                                     </li>
                                     <li className="mb-4 footerli">
-                                        <a href="https://discord.com/login?redirect_to=%2Flogin%3Fredirect_to%3D%252Fchannels%252F1177526037278634054%252F1177526038046187562" className="hover:underline">
+                                        <a href="#" className="hover:underline">
                                             Discord
                                         </a>
                                     </li>
                                 </ul>
+                            </div>
+                            <div>
+                            <h2 className="mb-6 text-sm font-semibold text-white uppercase ">
+                                    Follow Us
+                                </h2>
+                      <ul className="text-white  font-medium">
+                      <li className="mb-4">
+                                        <a href="#" className="mb-4 footerli">
+                                        Abstract
+                                        </a>
+                                    </li>
+                                    <li className="mb-4">
+                                        <a href="#" className="mb-4 footerli">
+                                        Introduction
+                                        </a>
+                                    </li>
+                                
+                                    <li className="mb-4">
+                                        <a href="#" className="mb-4 footerli">
+                                        Tokenomics
+                                        </a>
+                                    </li>
+                      </ul>
+
                             </div>
                             <div>
                                 <h2 className="mb-6 text-sm font-semibold text-white uppercase ">
@@ -102,7 +108,7 @@ export default function Footer() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='w-[80%]'>
+                            {/* <div className='w-[80%]'>
                                 <Image
                                     // style={{ width: '30%', height: '30%' }}
                                     height={100}
@@ -114,7 +120,7 @@ export default function Footer() {
                                 <h2 className="mb-4 mt-2 text-sm text-center font-semibold text-white uppercase ">
                                     Scan QR code for  Wallet App.
                                 </h2>
-                                {/* <ul className="text-white  font-medium">
+                                <ul className="text-white  font-medium">
                                    
                                     <li className="mb-4">
                                         <a href="#" className="hover:underline">
@@ -136,15 +142,15 @@ export default function Footer() {
                                             MacOS
                                         </a>
                                     </li>
-                                </ul> */}
-                            </div>
+                                </ul>
+                            </div> */}
                         </div>
-                        <div style={{ borderTop: '1px solid gray' }} className="px-4 py-6 bg-transparent  md:flex md:items-center md:justify-between">
+                        <div style={{ borderTop: '1px solid gray' , alignItems:'center' , justifyContent:'center'}} className="px-4 py-6 bg-transparent  md:flex md:items-center md:justify-between">
                             <span className="text-sm text-white  sm:text-center">
-                                © 2023 <a className='mangoname' href=""></a> All Rights
+                                © 2024 <a className='mangoname' href=""></a> All Rights
                                 Reserved.
                             </span>
-                            <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0">
+                            {/* <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0">
                                 <a
                                     href="https://twitter.com/manintell"
                                     className="text-white-400 hover:text-white "
@@ -254,7 +260,7 @@ export default function Footer() {
 
                                     <span className="sr-only">Telegram</span>
                                 </a>
-                                {/* <a
+                                <a
                                     href="https://www.facebook.com/ManIntelligent"
                                     className="text-white-400 hover:text-white"
                                 >
@@ -289,8 +295,8 @@ export default function Footer() {
                                     </svg>
 
                                     <span className="sr-only">Facebook page</span>
-                                </a> */}
-                            </div>
+                                </a>
+                            </div> */}
                             <div>
 
                             </div>

@@ -39,7 +39,7 @@ export default function Header() {
                         </span>
                     </a>
                     <div className="flex md:order-2">
-                    <a href="https://stakerewards.mmint.io/Mmint/referral/0x1D0BcF91Ba851045D0499F2b7Ee82824c6cF4bD6" target="_blank">
+                    <a href="#6" >
                         <button
                             type="button"   
                             className="text-white button focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 "

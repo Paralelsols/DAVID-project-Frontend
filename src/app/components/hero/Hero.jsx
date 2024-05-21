@@ -13,8 +13,8 @@ export default function Hero() {
                 <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold">
                    {/* <span className="mangoname">MMIT</span>  */}
                     </h1>
-                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold">
-                        The First <span className="mangoname">Fruit Meme</span> Token
+                    <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold">
+                         <span className="mangoname">PMT AI</span> Revolutionizing Automated Crypto and Forex Trading
 
                     </h1>
                     {/* <p className="text-sm md:text-sm lg:text-lg mt-1">
@@ -22,7 +22,7 @@ export default function Hero() {
                     </p> */}
                     {/* className="mangoborder" */}
                     <p style={{ lineHeight: '36px !importent' }} className="text-sm md:text-sm lg:text-lg mt-9">
-                It has maintained a market presence since 2022, making it an influential and enduring player in the crypto space.</p>
+                    PMT AI provides users with access to a diverse array of trading bots tailored for both cryptocurrency and forex markets.</p>
                     <button onClick={() => scroll('blockchain')} className="cursor-pointer button mt-7 w-[80%] md:w-[20%]" type="button">
                         Explore
                     </button>

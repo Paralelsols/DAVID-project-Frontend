@@ -27,9 +27,9 @@ export default function HomePage() {
                 <Header />
             </div>
             {/* <HeroBanner /> */}
-            {/* <Web3doamin /> */}
-            <Blockchain />
+            <Web3doamin />
             <Swap />
+            <Blockchain />
             {/* <MangoWallet /> */}
             {/* <Available /> */}
             {/* <Services /> */}
